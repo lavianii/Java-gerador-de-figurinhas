@@ -11,8 +11,9 @@ public class App {
 
         try 
         {
-            //acessando a url fazendo a conexao HTTP
-            String url = "https://imdb-api.com/en/API/Top250Movies/k_m86tw9bo";
+             
+           //acessando a url fazendo a conexao HTTP
+            String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
             URI endereco = URI.create(url);
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
@@ -23,7 +24,7 @@ public class App {
             //extrair só os dados que interessam(titulo, imagem, classificacao)
             var parser = new JsonParser();
             List<Map<String, String>> listaDeFilmes = parser.parse(body);
-    
+     
             // exibir e manipular os dados 
             for (Map<String,String> filme : listaDeFilmes) {
                 System.out.println(filme.get("title"));
