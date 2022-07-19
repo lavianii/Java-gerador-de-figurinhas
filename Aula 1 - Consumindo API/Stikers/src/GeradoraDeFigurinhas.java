@@ -24,12 +24,12 @@ public class GeradoraDeFigurinhas {
 
             // cria nova imagem em memoria com transparencia e com tamanho novo
      
-            int altura = imagemOriginal.getHeight();
-            int largura = imagemOriginal.getWidth();
-            int novaAltura = altura + 200;
+            int altura = imagemOriginal.getHeight();// pega a altura da imagem
+            int largura = imagemOriginal.getWidth();// pega a largura da imagem
+            int novaAltura = altura + 200; // deixa a altura maior
             BufferedImage novaImagem = new BufferedImage(largura,
                                                          novaAltura,
-                                                         BufferedImage.TRANSLUCENT);
+                                                         BufferedImage.TRANSLUCENT); // deixa a segunda imagem transparente
 
             // copiar a imagem original para nova imagem (em memoria)
      
@@ -38,17 +38,17 @@ public class GeradoraDeFigurinhas {
 
             // configurar a fonte
      
-            Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
-            caneta.setFont(fonte);
-            caneta.setColor(Color.ORANGE);
+            Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64); // tipo da fonte, modelo da fonte, tamanho da fonte
+            caneta.setFont(fonte);// atribui oq foi alterado na fonte
+            caneta.setColor(Color.ORANGE);// muda a cor da fonte
 
-            // escrever uma farse na nova imagem
+            // escrever uma frase na nova imagem
      
-            caneta.drawString("TESTE",215,novaAltura - 100);
+            caneta.drawString("TESTE",215,novaAltura - 100);// escreve na imagem, centraliza a frase, posiciona a frase 
 
             // escrever a nova imagem em um arquivo
      
-            ImageIO.write(novaImagem, "png", new File(nomeArquivo));
+            ImageIO.write(novaImagem, "png", new File(nomeArquivo));// faz com que apareca o que foi escrito na imagem 
 
         } catch (Exception e) {
             e.getMessage();
